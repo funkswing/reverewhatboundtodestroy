@@ -12,13 +12,7 @@ from google.appengine.ext.webapp import template
 class defaultPage(webapp.RequestHandler):
     def get(self):
         templatepath = os.path.dirname(__file__) + '/templates/'                     
-        html = template.render(templatepath+'00landing_page.html', {'title':'Ubertool'})
+        html = template.render(templatepath+'index.html', {'title':'Test'})
         self.response.out.write(html)
 
 app = webapp.WSGIApplication([('/.*', defaultPage)], debug=True)
-
-def main():
-    run_wsgi_app(app)
-
-if __name__ == '__main__':
-    main()  
